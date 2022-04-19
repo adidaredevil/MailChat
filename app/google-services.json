@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "423315806105",
+    "project_id": "mailchat-app",
+    "storage_bucket": "mailchat-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:423315806105:android:4bbdd4de62345e88e62508",
+        "android_client_info": {
+          "package_name": "com.example.mailchat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "423315806105-r9iqs69a5uhim4vl9773usvhabv15b88.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mailchat",
+            "certificate_hash": "382d67b9d1ff2a0560c0e8fc8c2b43d4fb13d1ea"
+          }
+        },
+        {
+          "client_id": "423315806105-go89cl6fhvqpaar8u6h9pida4dspptnc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC39RPqWIwsCiVGPleKTM0SD8i8CfdX7EA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "423315806105-go89cl6fhvqpaar8u6h9pida4dspptnc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
