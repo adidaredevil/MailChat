@@ -5,7 +5,20 @@
     android:background="@color/lightest"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignIn_Activity">
+    tools:context=".SignUp_Activity">
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome to"
+        android:textColor="@color/dark"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.22000003" />
 
     <TextView
         android:id="@+id/textView4"
@@ -17,8 +30,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.22000003" />
+        app:layout_constraintTop_toBottomOf="@id/textView7"
+        app:layout_constraintVertical_bias="0.0" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="300dp"
@@ -44,7 +57,7 @@
                 android:id="@+id/textView5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Log in to MailChat"
+                android:text="Create a new Account"
                 android:textColor="@color/lightest"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="@+id/container"
@@ -75,32 +88,42 @@
                 app:layout_constraintEnd_toEndOf="@+id/edtEmailSignIn"
                 app:layout_constraintStart_toStartOf="@+id/edtEmailSignIn"
                 app:layout_constraintTop_toBottomOf="@+id/edtEmailSignIn" />
-
-            <Button
-                android:id="@+id/btnLogIn"
+            <EditText
+                android:id="@+id/edtConfirmPasswordSignIn"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/dark"
-                android:paddingBottom="5dp"
-                android:text="Log in"
-                android:textColor="@color/white"
+                android:hint="Confirm Password"
+                android:textColor="@color/lightest"
+                android:textColorHint="@color/lightest"
+                android:backgroundTint="@color/lightest"
                 app:layout_constraintEnd_toEndOf="@+id/edtEmailSignIn"
-                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="@+id/edtEmailSignIn"
                 app:layout_constraintTop_toBottomOf="@+id/edtPasswordSignIn" />
+
+            <Button
+                android:id="@+id/btnSignUp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Sign up"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/dark"
+                app:layout_constraintEnd_toEndOf="@+id/edtEmailSignIn"
+                app:layout_constraintStart_toStartOf="@+id/edtEmailSignIn"
+                app:layout_constraintTop_toBottomOf="@+id/edtConfirmPasswordSignIn"
+                android:paddingBottom="5dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sign up for MailChat"
+                android:text="Already have an account?"
                 android:textStyle="bold"
                 android:textColor="@color/dark"
                 app:layout_constraintBottom_toBottomOf="@id/container"
                 app:layout_constraintEnd_toEndOf="@id/container"
                 app:layout_constraintStart_toStartOf="@id/container"
-                app:layout_constraintTop_toBottomOf="@id/btnLogIn"
+                app:layout_constraintTop_toBottomOf="@id/btnSignUp"
                 app:layout_constraintVertical_bias="1.0"
-                android:onClick="signUpOnclick"/>
+                android:onClick="signInOnclick"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
