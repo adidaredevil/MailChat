@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MailChat">
         <activity
+            android:name=".ChatActivity"
+            android:exported="false" />
+        <activity
             android:name=".SignUp_Activity"
             android:exported="false" />
         <activity

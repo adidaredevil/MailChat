@@ -104,13 +104,15 @@
                 android:id="@+id/btnSignUp"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/dark"
+                android:paddingBottom="5dp"
                 android:text="Sign up"
                 android:textColor="@color/white"
-                android:backgroundTint="@color/dark"
                 app:layout_constraintEnd_toEndOf="@+id/edtEmailSignIn"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="@+id/edtEmailSignIn"
                 app:layout_constraintTop_toBottomOf="@+id/edtConfirmPasswordSignIn"
-                android:paddingBottom="5dp"/>
+                android:onClick="signUptoMailchat"/>
 
             <TextView
                 android:layout_width="wrap_content"
