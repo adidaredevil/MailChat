@@ -65,7 +65,7 @@
                 app:layout_constraintTop_toTopOf="@+id/container" />
 
             <EditText
-                android:id="@+id/edtEmailSignIn"
+                android:id="@+id/edtEmailSignUp"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
@@ -78,40 +78,40 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
             <EditText
-                android:id="@+id/edtPasswordSignIn"
+                android:id="@+id/edtPasswordSignUp"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="Password"
                 android:textColor="@color/lightest"
                 android:textColorHint="@color/lightest"
                 android:backgroundTint="@color/lightest"
-                app:layout_constraintEnd_toEndOf="@+id/edtEmailSignIn"
-                app:layout_constraintStart_toStartOf="@+id/edtEmailSignIn"
-                app:layout_constraintTop_toBottomOf="@+id/edtEmailSignIn" />
+                app:layout_constraintEnd_toEndOf="@+id/edtEmailSignUp"
+                app:layout_constraintStart_toStartOf="@+id/edtEmailSignUp"
+                app:layout_constraintTop_toBottomOf="@+id/edtEmailSignUp" />
             <EditText
-                android:id="@+id/edtConfirmPasswordSignIn"
+                android:id="@+id/edtConfirmPasswordSignUp"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="Confirm Password"
                 android:textColor="@color/lightest"
                 android:textColorHint="@color/lightest"
                 android:backgroundTint="@color/lightest"
-                app:layout_constraintEnd_toEndOf="@+id/edtEmailSignIn"
-                app:layout_constraintStart_toStartOf="@+id/edtEmailSignIn"
-                app:layout_constraintTop_toBottomOf="@+id/edtPasswordSignIn" />
+                app:layout_constraintEnd_toEndOf="@+id/edtEmailSignUp"
+                app:layout_constraintStart_toStartOf="@+id/edtEmailSignUp"
+                app:layout_constraintTop_toBottomOf="@+id/edtPasswordSignUp" />
 
             <Button
                 android:id="@+id/btnSignUp"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/dark"
                 android:paddingBottom="5dp"
                 android:text="Sign up"
+                android:backgroundTint="@color/dark"
                 android:textColor="@color/white"
-                app:layout_constraintEnd_toEndOf="@+id/edtEmailSignIn"
+                app:layout_constraintEnd_toEndOf="@+id/edtEmailSignUp"
                 app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="@+id/edtEmailSignIn"
-                app:layout_constraintTop_toBottomOf="@+id/edtConfirmPasswordSignIn"
+                app:layout_constraintStart_toStartOf="@+id/edtEmailSignUp"
+                app:layout_constraintTop_toBottomOf="@+id/edtConfirmPasswordSignUp"
                 android:onClick="signUptoMailchat"/>
 
             <TextView

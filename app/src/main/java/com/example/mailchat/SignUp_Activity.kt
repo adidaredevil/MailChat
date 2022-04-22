@@ -41,9 +41,9 @@ class SignUp_Activity : AppCompatActivity() {
     }
 
     fun signUptoMailchat(view: View) {
-        email = edtEmailSignIn.text.toString()
-        password = edtPasswordSignIn.text.toString()
-        confirmPassword = edtConfirmPasswordSignIn.text.toString()
+        email = edtEmailSignUp.text.toString()
+        password = edtPasswordSignUp.text.toString()
+        confirmPassword = edtConfirmPasswordSignUp.text.toString()
         if (email.isEmpty()) {
             Toast.makeText(this, "Email cannot be empty", Toast.LENGTH_SHORT).show()
         } else if (password.isEmpty()) {
@@ -139,8 +139,9 @@ class SignUp_Activity : AppCompatActivity() {
                 firebaseUser= FirebaseAuth.getInstance().currentUser!!
                 firebaseUser.reload()
                 if(firebaseUser.isEmailVerified){
-                    val intent = Intent(this,ChatActivity::class.java)
+                    val intent = Intent(this,NameImage_Activity::class.java)
                     startActivity(intent)
+                    finish()
                 }else{
                     alreadyVerified()
                 }
@@ -162,8 +163,9 @@ class SignUp_Activity : AppCompatActivity() {
                 firebaseUser= FirebaseAuth.getInstance().currentUser!!
                 firebaseUser.reload()
                 if(firebaseUser.isEmailVerified){
-                    val intent = Intent(this,ChatActivity::class.java)
+                    val intent = Intent(this,NameImage_Activity::class.java)
                     startActivity(intent)
+                    finish()
                 }else{
                     alreadyVerified()
                 }
