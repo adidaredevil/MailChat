@@ -25,7 +25,7 @@ class SplashScreen_Activity : AppCompatActivity() {
                 startActivity(intent)
                 finish()
             }else{
-                val intent = Intent(this, NameImage_Activity::class.java)
+                val intent = Intent(this, Chat_Activity::class.java)
                 startActivity(intent)
                 finish()
             }

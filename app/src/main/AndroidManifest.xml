@@ -16,7 +16,8 @@
         android:theme="@style/Theme.MailChat">
         <activity
             android:name=".Chat_Activity"
-            android:exported="false" />
+            android:exported="false"
+            />
         <activity
             android:name=".NameImage_Activity"
             android:exported="false" />
