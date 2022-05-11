@@ -1,4 +1,4 @@
-package com.example.mailchat
+package com.example.mailchat.Auth
 
 import android.app.ProgressDialog
 import android.content.Intent
@@ -9,6 +9,8 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.example.mailchat.NameImage_Activity
+import com.example.mailchat.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import kotlinx.android.synthetic.main.activity_sign_up.*
@@ -139,7 +141,7 @@ class SignUp_Activity : AppCompatActivity() {
                 firebaseUser= FirebaseAuth.getInstance().currentUser!!
                 firebaseUser.reload()
                 if(firebaseUser.isEmailVerified){
-                    val intent = Intent(this,NameImage_Activity::class.java)
+                    val intent = Intent(this, NameImage_Activity::class.java)
                     startActivity(intent)
                     finish()
                 }else{
@@ -163,7 +165,7 @@ class SignUp_Activity : AppCompatActivity() {
                 firebaseUser= FirebaseAuth.getInstance().currentUser!!
                 firebaseUser.reload()
                 if(firebaseUser.isEmailVerified){
-                    val intent = Intent(this,NameImage_Activity::class.java)
+                    val intent = Intent(this, NameImage_Activity::class.java)
                     startActivity(intent)
                     finish()
                 }else{

@@ -1,4 +1,4 @@
-package com.example.mailchat
+package com.example.mailchat.Modals
 
 import com.google.firebase.firestore.FieldValue
 

@@ -1,4 +1,4 @@
-package com.example.mailchat
+package com.example.mailchat.Auth
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import com.example.mailchat.Chat_Activity
+import com.example.mailchat.R
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_signin.*
 
@@ -24,7 +26,7 @@ class SignIn_Activity : AppCompatActivity() {
     }
 
     fun signUpOnclick(view: View) {
-        val intent = Intent(this,SignUp_Activity::class.java)
+        val intent = Intent(this, SignUp_Activity::class.java)
         this.startActivity(intent)
     }
 
@@ -36,7 +38,7 @@ class SignIn_Activity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d("TAG", "signInWithEmail:success")
-                    val intent = Intent(this,Chat_Activity::class.java)
+                    val intent = Intent(this, Chat_Activity::class.java)
                     startActivity(intent)
                     finish()
                 } else {

@@ -22,7 +22,7 @@
             android:name=".NameImage_Activity"
             android:exported="false" />
         <activity
-            android:name=".SignUp_Activity"
+            android:name=".Auth.SignUp_Activity"
             android:exported="false" />
         <activity
             android:name=".SplashScreen_Activity"
@@ -34,7 +34,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SignIn_Activity"
+            android:name=".Auth.SignIn_Activity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
