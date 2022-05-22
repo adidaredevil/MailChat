@@ -45,7 +45,8 @@
             android:textSize="18sp"
             android:textStyle="bold"
             android:visibility="visible"
-            tools:text="Aditya Agarwala" />
+            android:text="Aditya Agarwala" />
+
     </com.google.android.material.appbar.MaterialToolbar>
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout

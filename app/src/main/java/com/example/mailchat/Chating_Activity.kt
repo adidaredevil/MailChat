@@ -1,5 +1,6 @@
 package com.example.mailchat
 
+import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -16,11 +17,8 @@ class Chating_Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         EmojiManager.install(GoogleEmojiProvider())
         setContentView(R.layout.activity_chating)
-        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
-        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-        window.setStatusBarColor(ContextCompat.getColor(this, R.color.dark))
-        supportActionBar?.show()
-        setSupportActionBar(toolBar)
+
+        nameTv.visibility=View.VISIBLE
         toolbar.setNavigationOnClickListener {
             onBackPressed()
         }
