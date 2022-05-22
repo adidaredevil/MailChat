@@ -126,7 +126,7 @@ class NameImage_Activity : AppCompatActivity() {
             btnNext.isClickable=false
             val user = User(name,downloadUrl,downloadUrl,firebaseAuth.uid!!);
             firebaseDatabase.collection("users").document(firebaseAuth.uid!!).set(user).addOnSuccessListener {
-                val intent= Intent(this, Chat_Activity::class.java)
+                val intent= Intent(this, After_Login_Activity::class.java)
                 startActivity(intent)
                 finish()
             }.addOnFailureListener{

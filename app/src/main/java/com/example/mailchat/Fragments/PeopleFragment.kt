@@ -1,5 +1,6 @@
 package com.example.mailchat.Fragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,16 +9,17 @@ import android.view.ViewGroup
 import androidx.paging.PagedList
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.mailchat.Adapters.EmptyViewHolder
 import com.example.mailchat.Modals.User
 import com.example.mailchat.R
-import com.example.mailchat.UserViewHolder
+import com.example.mailchat.Adapters.UserViewHolder
+import com.example.mailchat.Chating_Activity
 import com.firebase.ui.firestore.paging.FirestorePagingAdapter
 import com.firebase.ui.firestore.paging.FirestorePagingOptions
 import com.firebase.ui.firestore.paging.LoadingState
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
-import com.google.firebase.firestore.ktx.toObject
 import kotlinx.android.synthetic.main.fragment_people.*
 import java.lang.Exception
 
@@ -65,7 +67,13 @@ class PeopleFragment : Fragment() {
 
             override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int, model: User) {
                 if(holder is UserViewHolder){
-                    holder.bind(user = model)
+                    holder.bind(user = model){ name: String, photo: String, id: String ->
+                        val intent = Intent(requireContext(),Chating_Activity::class.java)
+                        intent.putExtra("name",name)
+                        intent.putExtra("photo",photo)
+                        intent.putExtra("id",id)
+                        startActivity(intent)
+                    }
                 }else{
                     // do nothing because it will be empty
                 }

@@ -1,4 +1,4 @@
-package com.example.mailchat.Fragments
+package com.example.mailchat.Adapters
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
