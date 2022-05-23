@@ -40,12 +40,11 @@
             android:layout_marginStart="10dp"
             android:ellipsize="end"
             android:lines="1"
-            android:onClick="hell"
-            android:textColor="@android:color/white"
+            android:text="Aditya Agarwala"
+            android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:visibility="visible"
-            android:text="Aditya Agarwala" />
+            android:visibility="visible" />
 
     </com.google.android.material.appbar.MaterialToolbar>
 
@@ -139,7 +138,8 @@
             android:background="?attr/selectableItemBackgroundBorderless"
             android:clickable="true"
             android:focusable="true"
-            android:src="@drawable/chat_icon" />
+            android:src="@drawable/chat_icon"
+            android:onClick="sendMessageOnClick"/>
     </RelativeLayout>
 
 
