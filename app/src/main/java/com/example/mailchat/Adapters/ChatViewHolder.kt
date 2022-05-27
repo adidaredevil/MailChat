@@ -21,11 +21,13 @@ class ChatViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
             Log.d("ff","here")
             titleTV.text = item.name
             subtitleTV.text = item.msg
-            Picasso.get()
-                .load(item.image)
-                .placeholder(R.drawable.ic_default_profile_picture_foreground)
-                .error(R.drawable.ic_default_profile_picture_foreground)
-                .into(imgUser)
+            if(item.image.isNotEmpty()){
+                Picasso.get()
+                    .load(item.image)
+                    .placeholder(R.drawable.ic_default_profile_picture_foreground)
+                    .error(R.drawable.ic_default_profile_picture_foreground)
+                    .into(imgUser)
+            }
             setOnClickListener{
                 onClick.invoke(item.name,item.image,item.from)
             }

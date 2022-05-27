@@ -73,15 +73,15 @@ class InboxFragment : Fragment() {
         }
     }
 
-//    override fun onStart() {
-//        super.onStart()
-//        mAdapter.startListening()
-//    }
-//
-//    override fun onStop() {
-//        super.onStop()
-//        mAdapter.stopListening()
-//    }
+    override fun onStart() {
+        super.onStart()
+        mAdapter.startListening()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        mAdapter.stopListening()
+    }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -89,7 +89,7 @@ class InboxFragment : Fragment() {
         rclInbox.apply {
             // use this setting to improve performance if you know that changes
             // in content do not change the layout size of the RecyclerView
-           // setHasFixedSize(true)
+            setHasFixedSize(true)
             layoutManager = viewManager
             adapter = mAdapter
         }
