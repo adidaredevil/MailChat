@@ -72,6 +72,7 @@ class PeopleFragment : Fragment() {
                         intent.putExtra("name",name)
                         intent.putExtra("photo",photo)
                         intent.putExtra("id",id)
+                        intent.putExtra("source","people")
                         startActivity(intent)
                     }
                 }else{

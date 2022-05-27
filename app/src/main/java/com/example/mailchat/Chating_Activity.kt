@@ -82,6 +82,7 @@ class Chating_Activity : AppCompatActivity() {
         nameTv.text=name
         Picasso.get().load(image).into(userImgView)
         listenToMessages()
+        if(intent.getStringExtra("source").equals("inbox"))
         updateReadCount()
     }
     private fun updateReadCount() {

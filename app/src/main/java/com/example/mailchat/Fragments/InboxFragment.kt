@@ -67,6 +67,7 @@ class InboxFragment : Fragment() {
                     intent.putExtra("id",id)
                     intent.putExtra("name",name)
                     intent.putExtra("photo",photo)
+                    intent.putExtra("source","inbox")
                     startActivity(intent)
                 }
             }
