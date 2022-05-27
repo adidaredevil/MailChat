@@ -33,20 +33,26 @@ class SignIn_Activity : AppCompatActivity() {
     fun signIntoMailchat(view: View) {
         email = edtEmailSignIn.text.toString()
         password = edtPasswordSignIn.text.toString()
-        firebaseAuth.signInWithEmailAndPassword(email, password)
-            .addOnCompleteListener(this) { task ->
-                if (task.isSuccessful) {
-                    // Sign in success, update UI with the signed-in user's information
-                    Log.d("TAG", "signInWithEmail:success")
-                    val intent = Intent(this, After_Login_Activity::class.java)
-                    startActivity(intent)
-                    finish()
-                } else {
-                    // If sign in fails, display a message to the user.
-                    Log.w("TAG", "signInWithEmail:failure", task.exception)
-                    Toast.makeText(baseContext, "Authentication failed please check your credentials and try again.",
-                        Toast.LENGTH_SHORT).show()
+        if(email.isEmpty()||password.isEmpty()){
+            Toast.makeText(this,"Please fill your credentials",Toast.LENGTH_SHORT).show()
+        }
+        else{
+            firebaseAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this) { task ->
+                    if (task.isSuccessful) {
+                        // Sign in success, update UI with the signed-in user's information
+                        Log.d("TAG", "signInWithEmail:success")
+                        val intent = Intent(this, After_Login_Activity::class.java)
+                        startActivity(intent)
+                        finish()
+                    } else {
+                        // If sign in fails, display a message to the user.
+                        Log.w("TAG", "signInWithEmail:failure", task.exception)
+                        Toast.makeText(baseContext, "Authentication failed please check your credentials and try again.",
+                            Toast.LENGTH_SHORT).show()
+                    }
                 }
-            }
+        }
+
     }
 }

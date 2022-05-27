@@ -80,6 +80,7 @@
 
             <EditText
                 android:id="@+id/edtPasswordSignUp"
+                android:password="true"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="Password"
@@ -91,6 +92,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/edtEmailSignUp" />
             <EditText
                 android:id="@+id/edtConfirmPasswordSignUp"
+                android:password="true"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="Confirm Password"

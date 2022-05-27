@@ -1,17 +1,23 @@
 package com.example.mailchat
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.Window
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.example.mailchat.Adapters.ScreenSliderAdapter
+import com.example.mailchat.Auth.SignIn_Activity
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_after_login.*
 
 
 class After_Login_Activity : AppCompatActivity() {
+    private val mauth:FirebaseAuth = FirebaseAuth.getInstance()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_after_login)
@@ -28,5 +34,23 @@ class After_Login_Activity : AppCompatActivity() {
                 else -> tab.text="PEOPLE"
             }
         }).attach()
+    }
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.signOut ->{
+                mauth.signOut()
+                finish()
+                startActivity(Intent(this,SignIn_Activity::class.java))
+                return true
+            }
+        }
+        return true
     }
 }

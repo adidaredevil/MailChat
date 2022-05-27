@@ -67,7 +67,9 @@
 
             <EditText
                 android:id="@+id/edtPasswordSignIn"
+                android:password="true"
                 android:layout_width="0dp"
+                android:ems="10"
                 android:layout_height="wrap_content"
                 android:hint="Password"
                 android:textColor="@color/lightest"
@@ -106,5 +108,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
