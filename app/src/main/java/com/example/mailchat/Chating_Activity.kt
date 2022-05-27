@@ -10,9 +10,10 @@ import androidx.activity.addCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.chitchat.isSameDayAs
+import com.example.mailchat.isSameDayAs
 import com.example.mailchat.Adapters.ChatAdapter
 import com.example.mailchat.Modals.*
+import com.example.mailchat.Utils.KeyboardVisibilityUtil
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.google.firebase.firestore.FirebaseFirestore
@@ -35,12 +36,18 @@ class Chating_Activity : AppCompatActivity() {
     lateinit var currentUser:User
     private val messages = mutableListOf<ChatEvent>()
     lateinit var  chatAdapter:ChatAdapter
+    private lateinit var keyboardVisibilityHelper: KeyboardVisibilityUtil
     private val emojiPopup:EmojiPopup by lazy {EmojiPopup.Builder.fromRootView(rootView).setOnEmojiPopupDismissListener{smileBtn.setBackgroundResource(R.drawable.ic_chat_smile)}.build(msgEdtv)}
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         EmojiManager.install(GoogleEmojiProvider())
         setContentView(R.layout.activity_chating)
+
+
+        keyboardVisibilityHelper = KeyboardVisibilityUtil(rootView) {
+            msgRv.scrollToPosition(messages.size - 1)
+        }
 
         val window: Window = this.getWindow()
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
@@ -75,8 +82,11 @@ class Chating_Activity : AppCompatActivity() {
         nameTv.text=name
         Picasso.get().load(image).into(userImgView)
         listenToMessages()
+        updateReadCount()
     }
-
+    private fun updateReadCount() {
+        getInbox(currUID!!,friendId!!).child("count").setValue(0)
+    }
     private fun getId(friendId:String):String{ // ID for the messages
         return if(friendId>currUID){
             currUID+friendId

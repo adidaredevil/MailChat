@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.chitchat.formatAsTime
+import com.example.mailchat.formatAsTime
 import com.example.mailchat.Modals.ChatEvent
 import com.example.mailchat.Modals.DateHeader
 import com.example.mailchat.Modals.Message

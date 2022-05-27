@@ -1,4 +1,4 @@
-package com.example.chitchat
+package com.example.mailchat
 
 import android.content.Context
 import android.os.Build

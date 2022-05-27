@@ -1,7 +1,7 @@
 package com.example.mailchat.Modals
 
 import android.content.Context
-import com.example.chitchat.formatAsHeader
+import com.example.mailchat.formatAsHeader
 import java.util.*
 
 interface ChatEvent{
