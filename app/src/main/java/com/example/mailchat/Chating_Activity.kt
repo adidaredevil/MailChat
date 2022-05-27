@@ -1,15 +1,13 @@
 package com.example.mailchat
 
 import android.content.Intent
-import android.opengl.Visibility
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import android.view.KeyEvent
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
-import android.widget.LinearLayout
-import android.widget.Toast
+import androidx.activity.addCallback
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.chitchat.isSameDayAs
@@ -19,11 +17,13 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.google.firebase.firestore.FirebaseFirestore
 import com.squareup.picasso.Picasso
-import com.vanniktech.emoji.EmojiManager
+import com.vanniktech.emoji.*
 import com.vanniktech.emoji.google.GoogleEmojiProvider
-import kotlinx.android.synthetic.main.activity_after_login.*
 import kotlinx.android.synthetic.main.activity_chating.*
-import java.util.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class Chating_Activity : AppCompatActivity() {
 
@@ -35,6 +35,7 @@ class Chating_Activity : AppCompatActivity() {
     lateinit var currentUser:User
     private val messages = mutableListOf<ChatEvent>()
     lateinit var  chatAdapter:ChatAdapter
+    private val emojiPopup:EmojiPopup by lazy {EmojiPopup.Builder.fromRootView(rootView).setOnEmojiPopupDismissListener{smileBtn.setBackgroundResource(R.drawable.ic_chat_smile)}.build(msgEdtv)}
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,6 +53,15 @@ class Chating_Activity : AppCompatActivity() {
             onBackPressed()
         }
 
+        swipeToLoad.setOnRefreshListener {
+            val workerScope = CoroutineScope(Dispatchers.Main)
+            workerScope.launch {
+                delay(2000)
+                swipeToLoad.isRefreshing = false
+            }
+        }
+
+        smileBtn.setBackgroundResource(R.drawable.ic_chat_smile);
         val intent: Intent by lazy { getIntent() }
         FirebaseFirestore.getInstance().collection("users").document(currUID).get().addOnSuccessListener {
             currentUser=it.toObject(User::class.java)!!
@@ -177,4 +187,26 @@ class Chating_Activity : AppCompatActivity() {
         chatAdapter.notifyItemInserted(messages.size-1)
         msgRv.scrollToPosition(messages.size-1)
     }
+
+    fun emojiOnClick(view: View) {
+        if(emojiPopup.isShowing()){
+            emojiPopup.dismiss()
+            smileBtn.setBackgroundResource(R.drawable.ic_chat_smile);
+        }
+        else {
+            emojiPopup.toggle()
+            smileBtn.setBackgroundResource(R.drawable.ic_keyboard);
+
+        }
+    }
+
+    fun edtOnClick(view: View) {
+        if(emojiPopup.isShowing()) {
+            emojiPopup.dismiss()
+            smileBtn.setBackgroundResource(R.drawable.ic_chat_smile);
+        }
+    }
+
+
+
 }
