@@ -11,6 +11,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.mailchat.NameImage_Activity
 import com.example.mailchat.R
+import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import kotlinx.android.synthetic.main.activity_sign_up.*
@@ -114,12 +115,14 @@ class SignUp_Activity : AppCompatActivity() {
                             verificationConfirmationDialog()
                         }
                         .addOnFailureListener { e ->
+                            firebaseUser.delete()
                             progressDialog.dismiss()
                             Log.e("TAG", "Sending email verification link failed ${e.message}")
                             Toast.makeText(this, "Failed to send due to ${e.message}", Toast.LENGTH_SHORT)
                                 .show()
                         }
                 } else {
+                    firebaseUser.delete()
                     // If sign in fails, display a message to the user.
                     progressDialog.dismiss()
                     Log.w("TAG", "createUserWithEmail:failure", task.exception)
@@ -150,6 +153,7 @@ class SignUp_Activity : AppCompatActivity() {
 
             }
             .setNegativeButton("CANCEL") { d, e ->
+                firebaseUser.delete()
                 d.dismiss()
             }
             .show()
@@ -174,12 +178,11 @@ class SignUp_Activity : AppCompatActivity() {
 
             }
             .setNegativeButton("CANCEL") { d, e ->
+                firebaseUser.delete()
                 d.dismiss()
             }
             .show()
     }
-
-
     fun isValidEmail(target: CharSequence?): Boolean {
         return if (target == null) {
             false

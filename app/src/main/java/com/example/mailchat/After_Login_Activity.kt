@@ -13,11 +13,13 @@ import com.example.mailchat.Auth.SignIn_Activity
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import kotlinx.android.synthetic.main.activity_after_login.*
 
 
 class After_Login_Activity : AppCompatActivity() {
     private val mauth:FirebaseAuth = FirebaseAuth.getInstance()
+    private val currentUser: FirebaseUser = mauth.currentUser!!
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_after_login)
@@ -28,6 +30,14 @@ class After_Login_Activity : AppCompatActivity() {
         supportActionBar?.show()
         setSupportActionBar(toolBar)
         viewPager.adapter = ScreenSliderAdapter(this)
+
+        if(!currentUser.isEmailVerified){
+            currentUser.delete()
+            val intent = Intent(this,SignIn_Activity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
         TabLayoutMediator(tabs,viewPager, TabLayoutMediator.TabConfigurationStrategy{ tab: TabLayout.Tab, pos: Int ->
             when(pos){
                 0 -> tab.text="CHATS"

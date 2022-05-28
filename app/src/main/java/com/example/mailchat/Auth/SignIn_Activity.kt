@@ -22,12 +22,12 @@ class SignIn_Activity : AppCompatActivity() {
         supportActionBar?.hide()
         setContentView(R.layout.activity_signin)
         firebaseAuth = FirebaseAuth.getInstance()
-
     }
 
     fun signUpOnclick(view: View) {
         val intent = Intent(this, SignUp_Activity::class.java)
         this.startActivity(intent)
+        finish()
     }
 
     fun signIntoMailchat(view: View) {
