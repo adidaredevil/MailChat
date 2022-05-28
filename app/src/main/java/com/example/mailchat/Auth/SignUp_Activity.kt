@@ -41,6 +41,7 @@ class SignUp_Activity : AppCompatActivity() {
     fun signInOnclick(view: View) {
         val intent = Intent(this, SignIn_Activity::class.java)
         startActivity(intent)
+        finish()
     }
 
     fun signUptoMailchat(view: View) {
