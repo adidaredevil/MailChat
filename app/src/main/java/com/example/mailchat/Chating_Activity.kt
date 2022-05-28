@@ -2,6 +2,7 @@ package com.example.mailchat
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.KeyEvent
 import android.view.View
 import android.view.Window
@@ -86,6 +87,7 @@ class Chating_Activity : AppCompatActivity() {
         updateReadCount()
     }
     private fun updateReadCount() {
+        Log.d("mazza","$friendId+$currUID")
         getInbox(currUID!!,friendId!!).child("count").setValue(0)
     }
     private fun getId(friendId:String):String{ // ID for the messages
@@ -127,7 +129,8 @@ class Chating_Activity : AppCompatActivity() {
             currUID,
             name,
             image,
-            count=0
+            friendId,
+            count=0,
         )
         getInbox(currUID,friendId).setValue(inboxMap).addOnSuccessListener {
             getInbox(friendId,currUID).addListenerForSingleValueEvent(object:ValueEventListener{
@@ -138,6 +141,7 @@ class Chating_Activity : AppCompatActivity() {
                         name = currentUser.name
                         image=currentUser.imageUrl
                         count=1
+                        id = currUID
                     }
                     value?.let{
                         if(it.from == message.senderId){

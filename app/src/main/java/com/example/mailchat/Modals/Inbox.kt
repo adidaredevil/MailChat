@@ -7,9 +7,10 @@ data class Inbox(
     var from:String,
     var name:String,
     var image:String,
+    var id:String,
     val time:Date = Date(),
     var count:Int
 
 ){
-    constructor():this("","","","",Date(),0)
+    constructor():this("","","","","",Date(),0)
 }

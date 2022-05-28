@@ -29,7 +29,7 @@ class ChatViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
                     .into(imgUser)
             }
             setOnClickListener{
-                onClick.invoke(item.name,item.image,item.from)
+                onClick.invoke(item.name,item.image,item.id)
             }
 
         }
