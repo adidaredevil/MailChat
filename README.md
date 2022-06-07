@@ -13,19 +13,18 @@ A live chatting app using Email Id and Password. The app uses Email Id and Passw
 
 Sign Up Page
 <img src = "https://user-images.githubusercontent.com/87412420/172292778-25b28143-3edd-4ea1-91de-db5df434be12.jpeg" width="200" height="400" />
-![WhatsApp Image 2022-06-07 at 9 17 06 AM (1)](https://user-images.githubusercontent.com/87412420/172292778-25b28143-3edd-4ea1-91de-db5df434be12.jpeg =200x400)
 Sign In Page
-![WhatsApp Image 2022-06-07 at 9 17 06 AM](https://user-images.githubusercontent.com/87412420/172292780-3358222f-544a-4db6-9f3d-371a3a080401.jpeg)
+<img src = "https://user-images.githubusercontent.com/87412420/172292780-3358222f-544a-4db6-9f3d-371a3a080401.jpeg" width="200" height="400" />
 Verify Email Alert Box
-![WhatsApp Image 2022-06-07 at 9 24 43 AM (1)](https://user-images.githubusercontent.com/87412420/172292783-2f76c58b-c0d3-46da-90e5-a02ba9574fd0.jpeg)
+<img src = "https://user-images.githubusercontent.com/87412420/172292783-2f76c58b-c0d3-46da-90e5-a02ba9574fd0.jpeg" width="200" height="400" />
 Profile info Activity
-![WhatsApp Image 2022-06-07 at 9 33 19 AM](https://user-images.githubusercontent.com/87412420/172293598-2a74354c-7334-49dc-aadf-f42b49dc4dfc.jpeg)
+<img src = "https://user-images.githubusercontent.com/87412420/172293598-2a74354c-7334-49dc-aadf-f42b49dc4dfc.jpeg" width="200" height="400" />
 Chat Section
-![WhatsApp Image 2022-06-07 at 9 24 43 AM](https://user-images.githubusercontent.com/87412420/172292785-de3bacb1-15b7-4bda-aeec-b932c855330c.jpeg)
+<img src = "https://user-images.githubusercontent.com/87412420/172292785-de3bacb1-15b7-4bda-aeec-b932c855330c.jpeg" width="200" height="400" />
 Peoples Section
-![WhatsApp Image 2022-06-07 at 9 17 07 AM (1)](https://user-images.githubusercontent.com/87412420/172292791-d3f9e090-0e03-40b1-be13-737e3da93b2d.jpeg)
+<img src = "https://user-images.githubusercontent.com/87412420/172292791-d3f9e090-0e03-40b1-be13-737e3da93b2d.jpeg" width="200" height="400" />
 Chat Box
-![WhatsApp Image 2022-06-07 at 9 24 42 AM](https://user-images.githubusercontent.com/87412420/172292786-2a683aec-b060-473a-94f1-71c59884070c.jpeg)
+<img src = "https://user-images.githubusercontent.com/87412420/172292786-2a683aec-b060-473a-94f1-71c59884070c.jpeg" width="200" height="400" />
 
 ## Color Schema Used:
 
