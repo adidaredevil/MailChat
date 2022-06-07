@@ -12,6 +12,7 @@ A live chatting app using Email Id and Password. The app uses Email Id and Passw
 ## App Sections:
 
 Sign Up Page
+<img src = "https://user-images.githubusercontent.com/87412420/172292778-25b28143-3edd-4ea1-91de-db5df434be12.jpeg" width="200" height="400" />
 ![WhatsApp Image 2022-06-07 at 9 17 06 AM (1)](https://user-images.githubusercontent.com/87412420/172292778-25b28143-3edd-4ea1-91de-db5df434be12.jpeg =200x400)
 Sign In Page
 ![WhatsApp Image 2022-06-07 at 9 17 06 AM](https://user-images.githubusercontent.com/87412420/172292780-3358222f-544a-4db6-9f3d-371a3a080401.jpeg)
